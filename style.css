@@ -1,0 +1,13 @@
+#countLabel{
+    display: block;
+    text-align: center;
+    color: purple;
+    font-size: 50px;
+}
+
+div{
+    display: block;
+    text-align: center;
+    color: blueviolet;
+    background-color: hotpink;
+}
