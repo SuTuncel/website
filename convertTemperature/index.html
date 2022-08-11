@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature</title>
+    <style>
+        h2{
+            color: pink;
+        }
+
+        label{
+            color: goldenrod;
+        }
+    </style>
 </head>
 <body>
+    <h2>Convert Temperature</h2>
+    <label> Enter a temperature: </label>
+    <input type="text" id="textbox"><br>
+
+    <label> convert to: </label><br>
+    <input type="radio" id="cButton" name="unit">
+    <label>Celcius</label><br>
+    <input type="radio" id="fButton" name="unit">
+    <label>Fahrenheit</label><br>
+
+    <button type="button" id="button">submit</button><br>
+    <label id="tempLabel"></label>
+
+
     
+    <script src="index.js"></script>
 </body>
 </html>
