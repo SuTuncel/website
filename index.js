@@ -264,7 +264,6 @@ for(let i = 1; i<=3; i++){
  console.log(`You have ${items} items`);
  console.log(`Your total is $${total}`);
 
- */
 
  // toLocaleString() = returns a string with a language sensitive representation of this number
  let myNum = 123456.789; 
@@ -277,4 +276,80 @@ for(let i = 1; i<=3; i++){
 
  console.log(myNum);
 
- 
+// array
+
+var fruits = ["apple", "orange", "banana"];
+console.log(fruits); // indexleriyle birlikte görünüyor
+fruits[0]= "coconut"; // changes
+
+fruits.push("lemon"); // add element
+fruits.pop(); // removes last element
+fruits.unshift("mango"); // add element to begining
+fruits.shift(); //removes element from begning
+
+let length = fruits.length; 
+console.log(length); 
+
+let index = fruits.indexOf("kiwi") // return -1 
+
+// array for işlemleri 
+let prices = [5, 10, 15, 20];
+
+for(let i = 0; i< prices.length; i++){
+    console.log(prices[i]);
+}
+
+for (let i = prices.length - 1; i>=0; i--){
+    console.log(prices[i]);
+}
+
+for ( let price of prices){ // like python
+    console.log(price); 
+}
+
+ // sorting array 
+let fruits = ["banana", "apple", "orange", "mango"]
+
+fruits = fruits.sort(); // abc order
+
+fruits = fruits.sort().reverse(); // reversee abc order
+
+for(let fruit of fruits){
+    console.log(fruit);
+}
+
+// 2d array
+
+let fruits = ["apples", "oranges", "bananas"];
+
+let vegetables = ["carrots", "onions", "potatoes"];
+
+let meats = ["eggs", "chicken" , "fish"];
+
+let groceryList = [fruits, vegetables,meats];
+
+groceryList[0][0] = "mangoes";
+groceryList[1][2] = "steak"; 
+
+for ( let list of groceryList){
+   // console.log(list); tüm arrayleri ayrı ayrı gösteriyo 
+    for(let food of list){
+        console.log(food); // hepsini bir listede gösterir
+    }
+}
+
+//spread operator = allows an iterable such as an array or string to be expanded in places where zero or more arguments are expected (unpacks the elements)
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(...numbers); // direkt bastırıyor stringlerde de işe yarıyor
+
+ let maximum = Math.max(...numbers);  // direkt maximum sayıyı gösteriyor
+ console.log(maximum); 
+
+ let class1 = ["anne", "max", "gisele"];
+ let class2 = ["suzie", "mike", "ian"];
+
+ class1.push(...class2);
+ console.log(...class1);
+
+ */
