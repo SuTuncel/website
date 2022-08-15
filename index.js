@@ -352,4 +352,156 @@ console.log(...numbers); // direkt bastırıyor stringlerde de işe yarıyor
  class1.push(...class2);
  console.log(...class1);
 
- */
+ // rest parameters: packs arguments into an array 
+
+ let a = 1;
+ let b = 2;
+ let c = 3;
+ let d = 4;
+ let e = 5;
+
+ console.log(sum(a,b,c,d,e));
+ console.log(sum(a, b, d));
+
+ function sum(...numbers){
+    let total = 0; 
+    for(let number of numbers){
+        total+=number;
+    }
+    return total;
+
+ }
+
+ // callback = a function passed as an argument to another function
+ //let total = sum(2, 3);
+ //displayDOM(total);
+ 
+ sum(2, 3, displayDOM);
+ function sum(x, y, callBack){
+    let result = x + y; 
+    callBack(result);
+ }
+
+ function displayConsole(output){
+    console.log(output);
+ }
+
+ function displayDOM(output){
+    document.getElementById("myLabel").innerHTML = output;
+ }
+
+ // array.forEac() function 
+
+ let students = ["bob", "jenny", "kelly"];
+
+ students.forEach(capitalize);
+ students.forEach(print);
+
+ function capitalize(element, index, array){
+    array[index]= element[0].toUpperCase() + element.substring(1);
+ }
+
+ //console.log(students[0]);
+
+ function print(element){
+    console.log(element);
+ }
+
+// array.map() = executes a provided callBack function once for each array element and creates new array
+
+let numbers = [1, 2, 3, 4, 5]; 
+let squares = numbers.map(square);
+
+squares.forEach(print);
+
+function square(element){
+  return Math.pow(element, 2);  
+}
+
+function print(element){
+    console.log(element);
+}
+
+// array.filter() = creates a new array with all elements that pass the test provided by a function
+let ages = [18 ,15, 21 ,17, 19, 22];
+
+let adults = ages.filter(checkAge);
+adults.forEach(print);
+
+function checkAge(element){
+    return element >= 18;
+}
+
+function print(element){
+    console.log(element);
+}
+
+// array.reduce() = reduce an array to a single value
+
+let prices = [5, 10, 15, 20, 25];
+
+let total = prices.reduce(checkOut);
+
+console.log("The total is: "+ total);
+
+function checkOut(total, element){
+    return total + element; 
+}
+
+// array sorting 
+
+let grades = [100, 50, 90, 60, 80 ,70]; 
+
+grades = grades.sort(descendingSort);
+
+grades.forEach(print);
+
+function descendingSort(x, y){
+    return y - x; 
+}
+
+function ascendingSort(x, y){
+    return x - y; 
+}
+
+function print(element){
+    console.log(element);
+}
+
+// function expression = function without a name 
+
+const greeting = function(){
+    console.log("Hello"); 
+}
+
+greeting();
+
+
+// array function
+
+const greeting = function(userName){
+    console.log(`hello ${userName}`);
+}
+
+const greeting = (userName) => console.log(`Hello ${userName}`);
+
+greeting("Bro");
+
+const percent = (x, y) => x / y * 100; 
+
+console.log(`${percent(45, 30)}%`);
+
+let grades = [100, 50, 90, 60, 80, 70];
+
+grades.sort(function(x, y){
+    return y - x; 
+})
+
+grades.forEach(function(element){
+    console.log(element);
+})
+
+grades.sort((x, y) => y - x);
+
+grades.forEach((element) => console.log(element));
+*/
