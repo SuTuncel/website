@@ -504,4 +504,73 @@ grades.forEach(function(element){
 grades.sort((x, y) => y - x);
 
 grades.forEach((element) => console.log(element));
+
+// shuffle an array 
+let cards = ["A", "2", "3", "4", "5", "6", "7", "8" ,"9", "10", "J", "K", "Q"];
+
+shuffle(cards);
+//console.log(cards[0]);
+cards.forEach(card => console.log(card));
+
+function shuffle(array){
+    let currentIndex = array.length; 
+    while(currentIndex != 0){
+        let randomIndex = Math.floor(Math.random() * array.length);
+        currentIndex -= 1; 
+
+        let temp = array[currentIndex];
+
+        array[currentIndex] = array[randomIndex];
+        
+        array[randomIndex] = temp; 
+    }
+
+    return array;
+}
+
+//nested functions = functions inside other functions 
+
+let userName = "Elif";
+let userInbox = 0; 
+
+login();
+
+function login(){
+    displayuSERnAME();
+    displayUserInbox();
+
+    function displayuSERnAME(){
+        console.log(`Welcome ${userName}`);
+    }
+
+    function displayUserInbox(){
+        console.log(`You have ${userInbox} new messages`);
+    }
+}
+
+// Map = object that holds key-value pairs of any data type
+
+const store = new Map([
+    ["t-shirt", 20],
+    ["jeans", 30],
+    ["socks", 5],
+    ["underwear", 50]
+]);
+
+let shoppingCart = 0; 
+
+shoppingCart += store.get("t-shirt");
+
+store.set("hat", 40);
+
+store.delete("hat");
+
+console.log(store.has("hat"));
+
+console.log(store.size);
+
+store.forEach((value, key) => console.log(`${key} $${value}`));
+
+console.log(`Shopping cart total = $${shoppingCart}`);
+
 */
