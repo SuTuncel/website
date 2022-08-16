@@ -297,8 +297,128 @@ document.getElementById("myButton").onclick = function(){
     clearTimeout(timer3);
     alert(`thanks for buying`);
 }
-*/
 
 //setInterval()
 
+let count = 0; 
+let max = window.prompt("Count up to what #?");
+max = Number(max);
 
+const myTimer = setInterval(countUp, 1000);
+
+function countUp(){
+    count += 1; 
+    console.log(count);
+
+    if(count >= max){
+        clearInterval(myTimer);
+    }
+}
+
+// date objects 
+
+let date = new Date();
+let year = date.getFullYear();
+let dayOfMnoths = date.getDate();
+let dayofWeek = date.getDay();
+let month = date.getMonth();
+let hour = date.getHours();
+let minutes = date.getMinutes();
+date = date.toLocaleString();
+//console.log(date);
+document.getElementById("myL").innerHTML = formatTime(date); 
+
+function formatDate(date){
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+
+    return `${month}/${day}/${year}`;
+}
+
+function formatTime(date){
+    date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let amORpm = hours >= 12 ? "PM" : "AM";
+
+    return `${minutes}.${minutes} ${amORpm}`;
+}
+
+
+// console.time() = Starts a timer you can use to track how long an operation takes 
+
+console.time("Response time");
+//alert("Click the okay button");
+setTimeout(() => console.log("Hello"), 3000)
+console.timeEnd("Response time");
+
+// promise 
+
+async function loadFile(){
+    let fileloaded = false; 
+
+    if(fileloaded){
+        return "File loaded";
+    }
+    else{
+        throw "File not loaded"; 
+    }
+
+}
+loadFile.then(value => console.log(value))
+                .catch(error => console.log(error));
+
+/////Promise kısmı sadece///
+const promise = new Promise((resolve, reject) => {
+    let fileloaded = false; 
+
+    if(fileloaded){
+        resolve("File loaded");
+    }
+    else{
+        reject("File not loaded"); 
+    }
+});
+
+promise.then((value) =>console.log(value))
+            .catch(error => console.log(error));
+
+
+
+// asyns = makes a function return a Promise 
+const promise = new Promise(resolve =>{
+    setTimeout(resolve, 5000);
+});
+
+promise.then(() => console.log("Thanks for waiting!"));
+
+
+// await = makes an async function wait for a Promise
+async function loadFile(){
+
+    let fileLoaded = true;
+
+    if(fileLoaded){
+      return "File loaded";
+   }
+    else{
+      throw "File NOT loaded";
+   }
+}
+
+async function startProcess(){
+    try{
+    let message = await loadFile();
+    console.log(message);
+    }
+    catch(error){
+        alert(error);
+    }
+}
+startProcess();
+
+//loadFile.then((value) =>console.log(value))
+  //          .catch(error => console.log(error));
+
+  */
