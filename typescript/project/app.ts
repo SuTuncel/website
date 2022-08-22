@@ -8,11 +8,11 @@ let result;
 result = _productService.getProducts();
 result = _productService.getById(2);
 
-let p = new Product();
-
+let p = new Product("IPhone 12 mini","Telefon", 1980,);
+/*
 p.name = "IPhone 12 mini";
 p.price = 1980;
-p.category = "Telefon";
+p.category = "Telefon";*/
 
 _productService.saveProduct(p);
-console.log(result);
+console.log(`id: ${p.id}`);

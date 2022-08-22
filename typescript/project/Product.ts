@@ -1,8 +1,8 @@
 export class Product {
-    constructor(private _id?, 
-                private _name: string, 
+    constructor(private _name: string, 
                 private _category: string,
-                private _price: number){}
+                private _price: number,
+                private _id?){}
     
     get id(){
         return this._id;
